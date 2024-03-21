@@ -3,9 +3,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'lista-autos',
     templateUrl: './lista-autos.component.html',
-    //styleUrl: './app.component.css'
+    styleUrl: './lista-autos.component.css'
 })
-
 
 export class ListaAutosComponent {
     tituloListaAutos: string = 'Lista de Autos';
@@ -28,51 +27,51 @@ export class ListaAutosComponent {
             kilometraje: 15000,
             precio: 25000,
             calificacion: 4,
-            imageUrl: "/src/assets/imagenAutos/1.jpg"
+            imageUrl: "assets/imagenAutos/1.jpg"
         },
         {
             id: 2,
             marca: "Honda",
             modelo: "Civic",
             anio: 2018,
-            color: "Gris",
+            color: "Azul",
             kilometraje: 20000,
             precio: 22000,
             calificacion: 3.5,
-            imageUrl: "/src/assets/imagenAutos/2.jpg"
+            imageUrl: "assets/imagenAutos/2.jpg"
         },
         {
             id: 3,
             marca: "Ford",
             modelo: "Mustang",
             anio: 2019,
-            color: "Rojo",
+            color: "Gris",
             kilometraje: 18000,
             precio: 35000,
             calificacion: 4,
-            imageUrl: "/src/assets/imagenAutos/3.jpg"
+            imageUrl: "assets/imagenAutos/3.jpg"
         },
         {
             id: 4,
             marca: "Chevrolet",
             modelo: "Camaro",
             anio: 2017,
-            color: "Azul",
+            color: "Rojo",
             kilometraje: 25000,
             precio: 30000,
             calificacion: 4,
-            imageUrl: "/src/assets/imagenAutos/4.jpg"
+            imageUrl: "assets/imagenAutos/4.jpg"
         },
         {
             id: 5,
             marca: "BMW",
-            modelo: "Serie 3",
+            modelo: "Serie-3",
             anio: 2021,
             color: "Negro",
             kilometraje: 10000,
             precio: 40000,
             calificacion: 5,
-            imageUrl: "/src/assets/imagenAutos/5.jpg"
+            imageUrl: "assets/imagenAutos/5.jpg"
         }
     ];
 

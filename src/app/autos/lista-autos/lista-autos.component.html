@@ -37,8 +37,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!--            <tr *ngFor="let auto of listaAutos">
- -->
+            <!--<tr *ngFor="let auto of listaAutos">-->
                 <tr *ngFor="let auto of filtrarAutos()">
                     <td>
                         <p>
@@ -50,7 +49,7 @@
                         </p>
                     </td>
                     <td>{{auto.marca}}</td>
-                    <td>{{auto.modelo }}</td>
+                    <td>{{auto.modelo | aEspacio:"-" }}</td>
                     <td>{{auto.anio | number}}</td>
                     <td>{{auto.color | lowercase}}</td>
                     <td>{{auto.kilometraje }}</td>
