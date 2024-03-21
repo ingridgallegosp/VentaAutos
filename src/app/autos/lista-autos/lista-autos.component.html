@@ -1,13 +1,63 @@
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            Lista de Automóviles
+<div class="card">
+    <div class="card-header">
+        <h1>{{tituloListaAutos}}</h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="column-md-12">
+                <label for="filter">Filtrar por:</label>
+            </div>
+            <div class="column-md-4">
+                <input id="filter" type="text" [(ngModel)]="filtro" />
+            </div>
         </div>
-        <div class="card-body">
-            Filtros
+        <div class="row">
+            <div class="column-md-6">
+                <h3>Filtrar por:</h3>
+            </div>
         </div>
-        <div class="table-responsive">
-            Tabla - falta los script en el .jason de bootstrap 
-        </div>
+    </div>
+    <div class="table-responsive" *ngIf="arregloAutos.length>0">
+        <div class="tabla">
+            <thead>
+                <tr>
+                    <th class="col-2">
+                        <button class="btn btn-primary"
+                        (click)="toggleImage()">
+                        {{ muestraImagen ? "Oculta": "Muestra"}} imagen
+                        </button>
+                    </th>
+                    <th class="col-1">Marca</th>
+                    <th class="col-1">Modelo</th>
+                    <th class="col-1">Año</th>
+                    <th class="col-1">Color</th>
+                    <th class="col-1">Kilómetros</th>
+                    <th class="col-1">Precio</th>
+                    <th class="col-1">Calificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--            <tr *ngFor="let auto of listaAutos">
+ -->
+                <tr *ngFor="let auto of filtrarAutos()">
+                    <td>
+                        <p>
+                            <img [src]="auto.imageUrl"
+                                [style.width.px] = "anchoImagen"
+                                [style.margin.px] = "margenImagen"
+                                *ngIf="muestraImagen"
+                            />
+                        </p>
+                    </td>
+                    <td>{{auto.marca}}</td>
+                    <td>{{auto.modelo }}</td>
+                    <td>{{auto.anio | number}}</td>
+                    <td>{{auto.color | lowercase}}</td>
+                    <td>{{auto.kilometraje }}</td>
+                    <td>{{auto.precio | currency}}</td>
+                    <td>{{auto.calificacion}}</td>
+                </tr>
+            </tbody>
+        </div> 
     </div>
 </div>
