@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+//import { AutosService } from '../../shared/auto.service';
 @Component({
     selector: 'lista-autos',
     templateUrl: './lista-autos.component.html',
@@ -110,7 +111,7 @@ export class ListaAutosComponent implements OnInit {
                 color: "Gris",
                 kilometraje: 18000,
                 precio: 35000,
-                calificacion: 4,
+                calificacion: 2,
                 imageUrl: "assets/imagenAutos/3.jpg"
             },
             {
@@ -132,10 +133,14 @@ export class ListaAutosComponent implements OnInit {
                 color: "Negro",
                 kilometraje: 10000,
                 precio: 40000,
-                calificacion: 5,
+                calificacion: 1,
                 imageUrl: "assets/imagenAutos/5.jpg"
             }
         ];
+
+        //Servicios
+        //this.listaAutos = this._autosService.obtenListaAutos();
+        //this.listaAutosFiltrados = this.listaAutos;
     }
     
     toggleImage(): void {
@@ -177,4 +182,8 @@ export class ListaAutosComponent implements OnInit {
             ( auto: Auto ) => auto.marca.toLocaleLowerCase().includes( filtrarPor )
         )
     } */
+
+    //Servicios
+    //constructor( private _autosService: AutosService ) {}
+        
 }
