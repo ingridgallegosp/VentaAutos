@@ -10,41 +10,37 @@ import { InicioComponent } from './autos/inicio/inicio.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EstrellasComponent } from './shared/estrellas/estrellas.component';
 import { DetalleAutosComponent } from './autos/detalle-autos/detalle-autos.component';
-//import { RouterModule } from '@angular/router';
 import { RegistroComponent } from './autos/registro/registro.component';
 import { NotFoundComponent } from './autos/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserTableComponent } from './user/user-table/user-table.component';
+import { UserService } from './user/user.service';
+import { UsersComponent } from './user/users/users.component';
 
 @NgModule({
-   declarations: [
-      AppComponent, 
-      AEspacioPipe,
-      EstrellasComponent,
-      InicioComponent,
-      RegistroComponent,
-      ListaAutosComponent,
-      DetalleAutosComponent,
-      NotFoundComponent,
-   ],
+    declarations: [
+        AppComponent, 
+        AEspacioPipe,
+        EstrellasComponent,
+        InicioComponent,
+        RegistroComponent,
+        ListaAutosComponent,
+        DetalleAutosComponent,
+        NotFoundComponent,
+        //UserTableComponent,
+        //UserService,
+        //UsersComponent
+    ],
 
 
-   imports: [
-      BrowserModule,
-      AppRoutingModule, 
-      CommonModule,
-      FormsModule,
-      FontAwesomeModule,
-      //Router
-      /* RouterModule.forRoot([
-         { path: "autos", component: ListaAutosComponent },
-         { path: "autos/:id", component: DetalleAutosComponent },
-         { path: "inicio", component: InicioComponent },
-         { path: "registro", component: RegistroComponent},
-         { path: "", redirectTo: "inicio", pathMatch: "full" },
-         //{ path: "**", redirectTo: "notFound", pathMatch: "full" }
-         { path: "**", component: NotFoundComponent, pathMatch: "full" }
-
-      ]), */ 
-   ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule, 
+        CommonModule,
+        FormsModule,
+        FontAwesomeModule,
+        HttpClientModule,
+    ],
    
    providers: [],
    bootstrap: [AppComponent]
