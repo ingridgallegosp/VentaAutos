@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../user/user.service';
+
 
 @Component({
     //selector: 'registro',
@@ -10,8 +12,15 @@ import { Router } from '@angular/router';
 export class RegistroComponent {
     tituloPagina = "Registro del Cliente";
     quiereContacto: boolean = false;
-
-    constructor(private _router: Router,) { }
+    cliente: any = { 
+        id: '',
+        nombre:'',
+        password: '',
+        email: '',
+        telefono:'',
+    }
+    
+    //constructor(private _router: Router,) { }
 
     ngOnInit(): void {
     }
@@ -20,9 +29,28 @@ export class RegistroComponent {
         this._router.navigate([ '/inicio' ]);
     }
 
-    registra(): void {
+    
+    /* registra(): void {
         alert( "En construccion" );
         this._router.navigate( ["/autos"] );
+    } */
+
+    constructor(private _router: Router, private userService: UserService) { }
+
+    registra(): void {
+        // Llama al método addUser de UserService para agregar un nuevo cliente
+        this.userService.addUser(this.cliente).subscribe(
+            (response) => {
+                // Maneja la respuesta aquí si es necesario
+                alert("Cliente registrado exitosamente");
+                this._router.navigate(['/autos']);
+            },
+            (error) => {
+                console.error('Error al registrar cliente:', error);
+                // Maneja el error aquí si es necesario
+                alert("Hubo un error al registrar el cliente");
+            }
+        );
     }
 
     contacto(): void {
