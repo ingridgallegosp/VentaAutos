@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { AutosService } from '../../shared/auto.service';
-import { Auto } from '../auto.model';
+import { Auto } from '../../shared/auto.model';
 
 @Component({
     selector: 'lista-autos',

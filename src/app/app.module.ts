@@ -13,6 +13,7 @@ import { DetalleAutosComponent } from './autos/detalle-autos/detalle-autos.compo
 import { RegistroComponent } from './autos/registro/registro.component';
 import { NotFoundComponent } from './autos/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserTableComponent } from './user/user-table/user-table.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
         ListaAutosComponent,
         DetalleAutosComponent,
         NotFoundComponent,
+        UserTableComponent,
         
     ],
 
