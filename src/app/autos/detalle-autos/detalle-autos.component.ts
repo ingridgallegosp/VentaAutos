@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AutosService } from '../../shared/auto.service';
 import { Auto } from '../../shared/auto.model';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
     //selector: 'app-detalle-autos', ya no se usa como directiva sino con router
@@ -11,6 +13,12 @@ import { Auto } from '../../shared/auto.model';
 export class DetalleAutosComponent implements OnInit {
     tituloPagina = "Detalle de Autos";
     auto: Auto | undefined;
+
+    faStar = faStar
+    anchoImagen = 400;
+    margenImagen = 10;
+
+
 
     constructor(
         private _activatedRoute: ActivatedRoute,

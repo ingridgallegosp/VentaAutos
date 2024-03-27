@@ -4,6 +4,7 @@ export interface Auto {
     modelo: string;
     anio: number;
     foto: string;
+    color: string,
     kilometraje: 0,
     precio: "Unknown Type: decimal",
     calificacion: number

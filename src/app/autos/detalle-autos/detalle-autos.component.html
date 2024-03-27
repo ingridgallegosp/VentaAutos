@@ -4,16 +4,43 @@
     </div>
 
     <div class = 'container-fluid'>
-        <div class="row">
+        <div class="row ">
         <!-- Lado izquierdo: Datos y boton de compra -->
-            <div class="col-6 container">
+            <div class="col-6 ">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <p class="font-weight-bold">Marca:</p>
+                        <p class="font-weight-bold">Modelo:</p>
+                        <p class="font-weight-bold">Año:</p>
+                        <p class="font-weight-bold">Color:</p>
+                        <p class="font-weight-bold">Kilometros:</p>
+                        <p class="font-weight-bold">Precio:</p>
+                        <p class="font-weight-bold">Calificacion:</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <p>{{ auto && auto.marca ? auto.marca : 'no disponible' }}</p>
+                        <p>{{ auto && auto.modelo ? auto.modelo : 'no disponible' }}</p>
+                        <p>{{ auto && auto.anio ? auto.anio : 'no disponible' }}</p>
+                        <p>{{ auto && auto.color ? auto.color : 'no disponible' }}</p>
+                        <p>{{ auto && auto.kilometraje ? auto.kilometraje : 'no disponible' }}</p>
+                        <p>{{ auto && auto.precio ? auto.precio : 'no disponible' }}</p>
+                        <p>
+                            <estrellas *ngIf="auto"
+                                [calificacion]="auto.calificacion"
+                                >
+                            </estrellas>
+                        </p>
+                    </div>
+                </div>
             </div>
-
-
-
 
             <!-- Lado derecho: Fotos -->
             <div class="col-6 container">
+                <img *ngIf="auto" [src]="auto.foto"
+                [style.width.px] = "anchoImagen"
+                [style.margin.px] = "margenImagen"
+                />
+                <p *ngIf="auto && !auto.foto">Imagen no disponible</p>
             </div>
         </div>
     </div>
