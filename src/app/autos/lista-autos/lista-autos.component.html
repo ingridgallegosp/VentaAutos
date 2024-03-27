@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h1>{{tituloListaAutos}}</h1>
+        <h3>{{tituloListaAutos}}</h3>
     </div>
     <div class="card-body">
         <div class="row">
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="table-responsive" *ngIf="arregloAutos.length>0">
+    <div class="table-responsive" *ngIf="listaAutos.length>0">
         <div class="tabla">
             <thead>
                 <tr>
@@ -37,11 +37,11 @@
                 </tr>
             </thead>
             <tbody>
-            <!--<tr *ngFor="let auto of listaAutos">-->
+            <!-- <tr *ngFor="let auto of listaAutos"> -->
                 <tr *ngFor="let auto of filtrarAutos()">
                     <td>
                         <p>
-                            <img [src]="auto.imageUrl"
+                            <img [src]="auto.foto"
                                 [style.width.px] = "anchoImagen"
                                 [style.margin.px] = "margenImagen"
                                 *ngIf="muestraImagen"
@@ -49,12 +49,21 @@
                         </p>
                     </td>
                     <td>{{auto.marca}}</td>
-                    <td>{{auto.modelo | aEspacio:"-" }}</td>
+                    <td>
+                        <a [routerLink]="['/auto', auto.id]">{{ auto.modelo | aEspacio:"-" }}</a>
+                    </td>
                     <td>{{auto.anio | number}}</td>
                     <td>{{auto.color | lowercase}}</td>
                     <td>{{auto.kilometraje }}</td>
-                    <td>{{auto.precio | currency}}</td>
-                    <td>{{auto.calificacion}}</td>
+                    <td>{{auto.precio | currency:'USD':'symbol':'1.2-2'}}</td>             
+<!--                <td>{{auto.calificacion}}</td> numero-->                 
+                    <td>
+                        <estrellas
+                            [calificacion]="auto.calificacion"
+                            (starsClick)="onClickCalificacion($event)"
+                            >
+                        </estrellas>
+                    </td>
                 </tr>
             </tbody>
         </div> 
