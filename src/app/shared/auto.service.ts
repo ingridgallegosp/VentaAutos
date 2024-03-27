@@ -10,22 +10,26 @@ import { map } from 'rxjs/operators';
     
 export class AutosService {
    
-    private apiUrl = 'https://epico.gob.ec/vehiculo/public/api/vehiculos/'; 
+    //private apiUrl = 'https://epico.gob.ec/vehiculo/public/api/vehiculos/'; 
+    private apiUrl = 'https://epico.gob.ec/vehiculo/public/api/'; 
 
     constructor(private http: HttpClient) { }
 
     getData(): Observable<any> {
-        return this.http.get(this.apiUrl).pipe(
+        return this.http.get(this.apiUrl + 'vehiculos/').pipe(
             map((response: any) => response.data) 
         );
 
     }
 
     obtenListaAutos(): Observable<Auto[]> {
-        return this.getData(); //  reutiliza el método getData() si obtienes la lista de autos de la misma manera
+        return this.getData(); 
     }
     
     obtenAuto(id: number): Observable<Auto> {
-        return this.http.get<Auto>(`${this.apiUrl}/${id}`); // Solicita un auto específico por su ID
+        //return this.http.get<Auto>(`${this.apiUrl}vehiculo/${id}`);  
+        return this.http.get(`${this.apiUrl}vehiculo/${id}`).pipe(
+            map((response: any) => response.data) 
+        );
     } 
 }

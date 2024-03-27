@@ -8,7 +8,7 @@ import { NotFoundComponent } from './autos/not-found/not-found.component';
 
 const routes: Routes = [
   { path: "autos", component: ListaAutosComponent },
-  { path: "autos/:id", component: DetalleAutosComponent},
+  { path: "auto/:id", component: DetalleAutosComponent},
   { path: "inicio", component: InicioComponent },
   { path: "registro", component: RegistroComponent},
   { path: "", redirectTo: "inicio", pathMatch: "full" },

@@ -23,6 +23,8 @@ export class DetalleAutosComponent implements OnInit {
     }
      
     ngOnInit(): void {
+
+
         // Obtener el ID del auto de los parámetros de la ruta
         let id = Number(this._activatedRoute.snapshot.paramMap.get('id'));
 
@@ -32,9 +34,11 @@ export class DetalleAutosComponent implements OnInit {
                 this.auto = auto;
                 if (this.auto) {
                     this.tituloPagina += ": " + this.auto.id;
+                    //console.log(this.auto.id)
                 } else {
                     this.tituloPagina = "Auto no encontrado";
                 }
+                
             },
             (error) => {
                 console.error('Error al obtener el auto:', error);
@@ -43,6 +47,3 @@ export class DetalleAutosComponent implements OnInit {
         );
     } 
 } 
-
-    
-

@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 export class UserService {
 
     //'https://epico.gob.ec/vehiculo/';
-    private apiUrl = '/epico.gob.ec/vehiculo/public/api/cliente/'
+    private apiUrl = 'https://epico.gob.ec/vehiculo/public/api/'
 
     constructor(private http: HttpClient) { }
     
 
-    getUser(): Observable<any> {
-        return this.http.get(this.apiUrl);     
+    /* getUser(): Observable<any> {
+        return this.http.get(this.apiUrl+'clientes/');     
     }  
 
     getUserById(id:string): Observable<any> {
@@ -28,9 +28,10 @@ export class UserService {
 
     updateUser(id: string, nuevosDatos: any) {
         return this.http.put(this.apiUrl + '/' + id, nuevosDatos);
-    }
+    } */
 
     addUser(nuevosDatos: any) {
-        return this.http.post(this.apiUrl, nuevosDatos);
+        //return this.http.post(this.apiUrl, nuevosDatos);
+        return this.http.post(this.apiUrl+'cliente/', nuevosDatos )
     }
 }

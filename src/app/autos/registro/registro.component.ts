@@ -13,11 +13,12 @@ export class RegistroComponent {
     tituloPagina = "Registro del Cliente";
     quiereContacto: boolean = false;
     cliente: any = { 
-        id: '',
-        nombre:'',
-        password: '',
-        email: '',
-        telefono:'',
+        //id: '',
+        nombre: '',
+        apellido:'',
+        //password: '',
+        //email: '',
+        //telefono:'',
     }
     
     //constructor(private _router: Router,) { }
